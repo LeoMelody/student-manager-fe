@@ -8,11 +8,15 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
+    "@types/qs": "^6.9.3",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "antd": "^4.3.3",
+    "axios": "^0.19.2",
+    "axios-progress-bar": "^1.2.0",
     "http-proxy-middleware": "^1.0.4",
     "node-sass": "^4.14.1",
+    "qs": "^6.9.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
@@ -40,7 +44,46 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
     "customize-cra": "^1.0.0",
-    "react-app-rewired": "^2.1.6"
+    "error": "^10.4.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4",
+    "eslint-plugin-unicorn": "^20.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "react-app-rewired": "^2.1.6",
+    "stylelint": "^13.3.3",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-declaration-block-no-ignored-properties": "^2.3.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint -c .eslintrc.js"
+    ],
+    "*.{css,less,scss}": [
+      "stylelint --config .stylelintrc.json"
+    ],
+    "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+      "prettier --write"
+    ]
   }
 }
