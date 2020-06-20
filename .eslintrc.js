@@ -32,6 +32,6 @@ module.exports = {
     '@typescript-eslint',
   ],
   'rules': {
-    
+    "import/no-cycle": ["error", { "maxDepth": Infinity }]
   },
 };
